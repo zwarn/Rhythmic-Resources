@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f9f9eac8aa4d4aa02e9b5826232ffc, type: 3}
   m_Name: UnlockShapePlace
   m_EditorClassIdentifier: 
-  icon: {fileID: -3874450781391251309, guid: bd06631384e4d1746acf94ee143454e1, type: 3}
-  description: Unlock the forest
+  icon: {fileID: -1621138534137953119, guid: d6b33e9e90f7f654f8291f4c9caf2b4e, type: 3}
+  description: Unlock the shapes place
   price:
     resourceAmounts: []
   effects:
