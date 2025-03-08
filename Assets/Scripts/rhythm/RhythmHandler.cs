@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using resource;
 using UnityEngine;
 using Zenject;
 
 namespace rhythm
 {
-    public class RhythmController : MonoBehaviour
+    public class RhythmHandler : MonoBehaviour
     {
+        public event Action<Dictionary<TimingResult, int>> OnBarCompleted;
+
         public float bpm = 100;
 
-        public int missTolerance = 2500;
-        public int badTolerance = 1000;
-        public int goodTolerance = 330;
-        public int perfectTolerance = 100;
-        public Rhythm currentRhythm;
+        [SerializeField] private int missTolerance = 2500;
+        [SerializeField] private int badTolerance = 1000;
+        [SerializeField] private int goodTolerance = 330;
+        [SerializeField] private int perfectTolerance = 100;
+        [SerializeField] private RhythmSO currentRhythmSO;
 
         private int _time;
         private bool _isPlaying = false;
@@ -24,7 +25,6 @@ namespace rhythm
         private RhythmResult _recentBeat = null;
         private Dictionary<TimingResult, int> _resultCounter = new Dictionary<TimingResult, int>();
 
-        [Inject] private ResourceController _resourceController;
         [Inject] private AudioController _audioController;
 
         public void Update()
@@ -39,29 +39,31 @@ namespace rhythm
                     AnnounceMiss();
                 }
 
-                var currentBar = _time / currentRhythm.barDuration;
+                var currentBar = _time / currentRhythmSO.barDuration;
                 if (_barCount != currentBar)
                 {
                     _barCount = currentBar;
-                    HandleProduction();
+                    BarCompletedEvent(_resultCounter);
+                    ResetResultCounter();
                     Debug.Log($"Finished {_barCount}");
                 }
             }
         }
 
-        private void HandleProduction()
+        private void OnEnable()
         {
-            _resourceController.Gain(currentRhythm.production);
+            _recentBeat = null;
         }
 
-        private void PlayNote()
+        private void OnDisable()
         {
-            AudioSource.PlayClipAtPoint(currentRhythm.sound, Vector3.zero);
+            _recentBeat = null;
         }
+
 
         public int[] GetRelativeNotes()
         {
-            int barDuration = currentRhythm.barDuration;
+            int barDuration = currentRhythmSO.barDuration;
             int absoluteFrom = _time + (-missTolerance * 2);
             int absoluteTo = _time + barDuration;
 
@@ -73,7 +75,7 @@ namespace rhythm
             for (int currentBar = fromBar; currentBar < toBar; currentBar++)
             {
                 int timebase = currentBar * barDuration;
-                foreach (var note in currentRhythm.notes)
+                foreach (var note in currentRhythmSO.notes)
                 {
                     int timing = timebase + note;
                     if (timing >= absoluteFrom && timing <= absoluteTo && timing >= _nextNote)
@@ -108,6 +110,12 @@ namespace rhythm
             }
         }
 
+        public void ChangeCurrentRhythm(RhythmSO rhythm)
+        {
+            Stop();
+            currentRhythmSO = rhythm;
+        }
+
         private void AnnounceMiss()
         {
             // Stop();
@@ -127,13 +135,13 @@ namespace rhythm
 
         private void FindNextNote()
         {
-            int barDuration = currentRhythm.barDuration;
+            int barDuration = currentRhythmSO.barDuration;
             var currentBar = _barCount;
 
             while (true)
             {
                 int timebase = currentBar * barDuration;
-                foreach (var note in currentRhythm.notes)
+                foreach (var note in currentRhythmSO.notes)
                 {
                     int timing = timebase + note;
                     if (timing >= _time && timing > _nextNote)
@@ -178,7 +186,7 @@ namespace rhythm
             FindNextNote();
             _recentBeat = null;
             ResetResultCounter();
-            _audioController.Play(currentRhythm);
+            _audioController.Play(currentRhythmSO);
         }
 
         public bool IsPlaying()
@@ -189,6 +197,11 @@ namespace rhythm
         public RhythmResult GetRecentResult()
         {
             return _recentBeat;
+        }
+
+        public void BarCompletedEvent(Dictionary<TimingResult, int> timingResult)
+        {
+            OnBarCompleted?.Invoke(timingResult);
         }
     }
 }

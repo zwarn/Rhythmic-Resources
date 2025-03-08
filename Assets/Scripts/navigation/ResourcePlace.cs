@@ -1,26 +1,25 @@
-﻿using rhythm;
+﻿using System;
+using recipes;
+using rhythm;
 using UnityEngine;
-using Zenject;
 
 namespace navigation
 {
     class ResourcePlace : NavigationPlace
     {
-        [SerializeField] private Rhythm rhythm;
+        [SerializeField] private RhythmComponent rhythmComponent;
+        [SerializeField] private RecipeType recipeType;
 
-        [Inject] private RhythmController _rhythmController;
 
-        public override void EnterPlace()
+        private void Start()
         {
-            base.EnterPlace();
-            _rhythmController.Stop();
-            _rhythmController.currentRhythm = rhythm;
+            rhythmComponent.Init(recipeType);
         }
 
         public override void LeavePlace()
         {
             base.LeavePlace();
-            _rhythmController.Stop();
+            rhythmComponent.Stop();
         }
     }
 }

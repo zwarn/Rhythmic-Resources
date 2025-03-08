@@ -2,27 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
 
 namespace rhythm
 {
     public class RhythmUI : MonoBehaviour
     {
-        public GameObject notePrefab;
-        public Transform noteParent;
-        public Image feedbackMarker;
-        public Transform shadowParent;
+        [SerializeField] private GameObject notePrefab;
+        [SerializeField] private Transform noteParent;
+        [SerializeField] private Image feedbackMarker;
+        [SerializeField] private Transform shadowParent;
 
-        public List<ResultConfig> ResultConfig = new List<ResultConfig>();
+        [SerializeField] private List<ResultConfig> resultConfig = new List<ResultConfig>();
+        [SerializeField] private RhythmHandler rhythmHandler;
 
-        [Inject] private RhythmController _rhythmController;
         private List<GameObject> _noteObjects = new List<GameObject>();
-        private GameObject shadow;
+        private GameObject _shadow;
 
         public void Start()
         {
-            shadow = Instantiate(notePrefab, shadowParent);
-            shadow.SetActive(false);
+            _shadow = Instantiate(notePrefab, shadowParent);
+            _shadow.SetActive(false);
         }
 
         public void Update()
@@ -35,22 +34,22 @@ namespace rhythm
 
         private void HandleShadow()
         {
-            var recentResult = _rhythmController.GetRecentResult();
+            var recentResult = rhythmHandler.GetRecentResult();
             if (recentResult != null)
             {
-                shadow.SetActive(true);
-                shadow.GetComponent<Image>().color = ColorForQuality(recentResult.Quality);
-                MoveNoteToPosition(shadow.GetComponent<RectTransform>(), recentResult.Offset);
+                _shadow.SetActive(true);
+                _shadow.GetComponent<Image>().color = ColorForQuality(recentResult.Quality);
+                MoveNoteToPosition(_shadow.GetComponent<RectTransform>(), recentResult.Offset);
             }
             else
             {
-                shadow.SetActive(false);
+                _shadow.SetActive(false);
             }
         }
 
         private void HandleRecent()
         {
-            var recentResult = _rhythmController.GetRecentResult();
+            var recentResult = rhythmHandler.GetRecentResult();
 
             if (recentResult != null)
             {
@@ -61,7 +60,7 @@ namespace rhythm
 
         private Color ColorForQuality(TimingResult quality)
         {
-            var color = ResultConfig.Find(config => config.result == quality).color;
+            var color = resultConfig.Find(config => config.result == quality).color;
             return color;
         }
 
@@ -69,20 +68,20 @@ namespace rhythm
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (_rhythmController.IsPlaying())
+                if (rhythmHandler.IsPlaying())
                 {
-                    _rhythmController.Hit();
+                    rhythmHandler.Hit();
                 }
                 else
                 {
-                    _rhythmController.Play();
+                    rhythmHandler.Play();
                 }
             }
         }
 
         private void HandleNotes()
         {
-            var notesToDisplay = _rhythmController.GetRelativeNotes();
+            var notesToDisplay = rhythmHandler.GetRelativeNotes();
             while (_noteObjects.Count < notesToDisplay.Length)
             {
                 _noteObjects.Add(Instantiate(notePrefab, noteParent));

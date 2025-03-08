@@ -19,3 +19,4 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: 58c4a157126901b47979a4b2f6527e0d, type: 2}
   - {fileID: 11400000, guid: bd22c2eff810b2143869688e3c310107, type: 2}
+  - {fileID: 11400000, guid: 35ecc9da799191b49b4bcdc5758bbd34, type: 2}

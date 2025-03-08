@@ -6,9 +6,9 @@ namespace rhythm
     {
         [SerializeField] private AudioSource audioSource;
 
-        public void Play(Rhythm rhythm)
+        public void Play(RhythmSO rhythmSO)
         {
-            audioSource.clip = rhythm.sound;
+            audioSource.clip = rhythmSO.sound;
             audioSource.Play();
         }
 

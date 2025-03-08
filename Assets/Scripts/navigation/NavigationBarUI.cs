@@ -33,7 +33,7 @@ namespace navigation
                 if (!_navigationItems.ContainsKey(place))
                 {
                     var navigationItem = _itemFactory.Create();
-                    navigationItem.transform.parent = itemParent;
+                    navigationItem.transform.SetParent(itemParent);
                     navigationItem.SetData(place);
                     _navigationItems.Add(place, navigationItem);
                 }

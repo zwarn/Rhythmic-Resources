@@ -90,6 +90,7 @@ namespace navigation
         {
             var place = _container.InstantiatePrefab(placeSO.screenPrefab, placeParent)
                 .GetComponent<NavigationPlace>();
+            place.Init(placeSO);
             _places.Add(placeSO, place);
         }
 

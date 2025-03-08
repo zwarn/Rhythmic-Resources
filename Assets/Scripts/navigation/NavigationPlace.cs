@@ -6,6 +6,12 @@ namespace navigation
     public class NavigationPlace : MonoBehaviour
     {
         [SerializeField] private Transform content;
+        protected NavigationPlaceSO NavigationPlaceSO;
+
+        public void Init(NavigationPlaceSO so)
+        {
+            NavigationPlaceSO = so;
+        }
 
         public virtual void EnterPlace()
         {

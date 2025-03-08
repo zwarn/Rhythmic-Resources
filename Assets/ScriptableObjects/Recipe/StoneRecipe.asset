@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3f9f9eac8aa4d4aa02e9b5826232ffc, type: 3}
-  m_Name: BuyQuarry
+  m_Script: {fileID: 11500000, guid: 22750b3647bf49fb98400b15b02ea759, type: 3}
+  m_Name: StoneRecipe
   m_EditorClassIdentifier: 
+  recipeType: 0
   icon: {fileID: -700251186767036217, guid: bd06631384e4d1746acf94ee143454e1, type: 3}
-  description: Unlock the quarry
-  price:
+  rhythm: {fileID: 11400000, guid: 892b3ae2f3c04f648bcf336847f1aa36, type: 2}
+  input:
+    resourceAmounts: []
+  output:
     resourceAmounts:
-    - resource: {fileID: 11400000, guid: 85ad6ee5c9e84e54996f8a426fcbed09, type: 2}
-      amount: 10
-  effects:
-  - {fileID: 11400000, guid: d5115c87b82e85f4d9d61e85d1059a10, type: 2}
-  - {fileID: 11400000, guid: 0b15db5d70817c440b26a11bd4a7b55f, type: 2}
+    - resource: {fileID: 11400000, guid: fec72c3480adb2c4e942810a8c61fe20, type: 2}
+      amount: 1
