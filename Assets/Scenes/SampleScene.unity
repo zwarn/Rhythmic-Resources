@@ -919,8 +919,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startResources:
     resourceAmounts:
-    - resource: {fileID: 11400000, guid: 85ad6ee5c9e84e54996f8a426fcbed09, type: 2}
+    - resource: {fileID: 11400000, guid: 4561f49933a7a2046a3ef1ac3f1dcbb9, type: 2}
       amount: 50
+    - resource: {fileID: 11400000, guid: a87f5017698cd8e4fbb0093791f588f3, type: 2}
+      amount: 20
 --- !u!4 &991486425
 Transform:
   m_ObjectHideFlags: 0

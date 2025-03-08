@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f9f9eac8aa4d4aa02e9b5826232ffc, type: 3}
+  m_Name: UnlockShapePlace
+  m_EditorClassIdentifier: 
+  icon: {fileID: -3874450781391251309, guid: bd06631384e4d1746acf94ee143454e1, type: 3}
+  description: Unlock the forest
+  price:
+    resourceAmounts: []
+  effects:
+  - {fileID: 11400000, guid: 538357a043c5fb54392ae0f9a62929f0, type: 2}
+  - {fileID: 11400000, guid: 1ab0eac57d1d6914a808242535501890, type: 2}
+  - {fileID: 11400000, guid: 10ce15a470963e443a043e4a4c62f929, type: 2}
+  - {fileID: 11400000, guid: 339968930702dc3458f650a47b4e74a3, type: 2}
