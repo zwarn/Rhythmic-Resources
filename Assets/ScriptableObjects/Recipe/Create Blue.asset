@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeType: 1
   icon: {fileID: -7832760933319563135, guid: 6499ec30fc703dc4190ac85bd49b2e8f, type: 3}
-  rhythm: {fileID: 11400000, guid: 4fda34e5799502a41909ae4c0795c6e3, type: 2}
+  rhythms:
+  - {fileID: 11400000, guid: 892b3ae2f3c04f648bcf336847f1aa36, type: 2}
   input:
     resourceAmounts: []
   output:

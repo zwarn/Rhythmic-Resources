@@ -8,6 +8,7 @@ namespace rhythm
     public class RhythmHandler : MonoBehaviour
     {
         public event Action<Dictionary<TimingResult, int>> OnBarCompleted;
+        public event Action OnRequestPlay;
 
         public float bpm = 100;
 
@@ -198,10 +199,15 @@ namespace rhythm
         {
             return _recentBeat;
         }
+        public void RequestPlayEvent()
+        {
+            OnRequestPlay?.Invoke();
+        }
 
         public void BarCompletedEvent(Dictionary<TimingResult, int> timingResult)
         {
             OnBarCompleted?.Invoke(timingResult);
         }
+
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using recipes;
 using resource;
 using UnityEngine;
@@ -9,7 +8,7 @@ namespace rhythm
 {
     public class RhythmComponent : MonoBehaviour
     {
-        [SerializeField] private RhythmHandler rhythmHandler;
+        [SerializeField] private RhythmCombinator rhythmCombinator;
 
         private RecipeType _recipeType;
         private List<RecipeSO> _availableRecipe;
@@ -21,13 +20,15 @@ namespace rhythm
         private void OnEnable()
         {
             _recipeController.OnRecipeChanged += UpdateAvailableRecipes;
-            rhythmHandler.OnBarCompleted += HandleProduction;
+            rhythmCombinator.OnBarCompleted += HandleProduction;
+            rhythmCombinator.OnRequestPlay += Play;
         }
 
         private void OnDisable()
         {
             _recipeController.OnRecipeChanged -= UpdateAvailableRecipes;
-            rhythmHandler.OnBarCompleted -= HandleProduction;
+            rhythmCombinator.OnBarCompleted -= HandleProduction;
+            rhythmCombinator.OnRequestPlay -= Play;
         }
 
         public void Init(RecipeType type)
@@ -43,7 +44,12 @@ namespace rhythm
 
         public void Stop()
         {
-            rhythmHandler.Stop();
+            rhythmCombinator.Stop();
+        }
+
+        public void Play()
+        {
+            rhythmCombinator.Play();
         }
 
         public void SelectRecipe(RecipeSO selectedRecipe)
@@ -54,15 +60,8 @@ namespace rhythm
                 return;
             }
 
-            // if (rhythmHandler.IsPlaying())
-            // {
-            //     //TODO: handle changing of recipes while playing
-            //     Debug.LogError("No changing recipes while playing allowed");
-            //     return;
-            // }
-
             _currentRecipe = selectedRecipe;
-            rhythmHandler.ChangeCurrentRhythm(_currentRecipe.rhythm);
+            rhythmCombinator.SetRecipe(_currentRecipe);
         }
 
         public void SelectRecipeRight()

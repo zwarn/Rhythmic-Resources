@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace rhythm
 {
-    public class RhythmUI : MonoBehaviour
+    public class RhythmUI : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] private GameObject notePrefab;
         [SerializeField] private Transform noteParent;
@@ -28,7 +29,6 @@ namespace rhythm
         {
             HandleNotes();
             HandleRecent();
-            HandleInput();
             HandleShadow();
         }
 
@@ -64,18 +64,20 @@ namespace rhythm
             return color;
         }
 
-        private void HandleInput()
+        public void OnPointerClick(PointerEventData eventData)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            OnClick();
+        }
+
+        private void OnClick()
+        {
+            if (rhythmHandler.IsPlaying())
             {
-                if (rhythmHandler.IsPlaying())
-                {
-                    rhythmHandler.Hit();
-                }
-                else
-                {
-                    rhythmHandler.Play();
-                }
+                rhythmHandler.Hit();
+            }
+            else
+            {
+                rhythmHandler.RequestPlayEvent();
             }
         }
 

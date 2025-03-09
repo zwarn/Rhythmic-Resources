@@ -1,4 +1,5 @@
-﻿using resource;
+﻿using System.Collections.Generic;
+using resource;
 using rhythm;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace recipes
     {
         public RecipeType recipeType;
         public Sprite icon;
-        public RhythmSO rhythm;
+        public List<RhythmSO> rhythms;
         public ResourceList input;
         public ResourceList output;
     }

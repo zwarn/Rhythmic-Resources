@@ -10,15 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22750b3647bf49fb98400b15b02ea759, type: 3}
-  m_Name: Create Red
+  m_Name: Create Purple
   m_EditorClassIdentifier: 
   recipeType: 1
-  icon: {fileID: -8214830322228201795, guid: 3ad63a426bc700e4ebbefb36688336a7, type: 3}
+  icon: {fileID: -8771699237674309934, guid: ece4cfd3a7c052f4eaa08a6233dc411f, type: 3}
   rhythms:
   - {fileID: 11400000, guid: 892b3ae2f3c04f648bcf336847f1aa36, type: 2}
+  - {fileID: 11400000, guid: 4fda34e5799502a41909ae4c0795c6e3, type: 2}
   input:
     resourceAmounts: []
   output:
     resourceAmounts:
+    - resource: {fileID: 11400000, guid: c90311d2214f7ee4a83f427c74c9a6f5, type: 2}
+      amount: 3
     - resource: {fileID: 11400000, guid: 7a96d93f8854a1544914ec89a2240816, type: 2}
-      amount: 1
+      amount: 3
