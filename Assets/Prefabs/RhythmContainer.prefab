@@ -153,6 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handlerPrefab: {fileID: 1317834792764452119, guid: c1eb39bc73458554c8eb6bd86c4b98f0, type: 3}
   handlerParent: {fileID: 6868922429577730523}
+  hotkeys: 610000007300000064000000660000006700000068000000
 --- !u!1 &2558334322677541892
 GameObject:
   m_ObjectHideFlags: 0

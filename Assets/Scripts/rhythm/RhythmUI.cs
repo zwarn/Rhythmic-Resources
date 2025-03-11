@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ namespace rhythm
         [SerializeField] private Transform noteParent;
         [SerializeField] private Image feedbackMarker;
         [SerializeField] private Transform shadowParent;
+        [SerializeField] private TMP_Text hotkeyLabel;
 
         [SerializeField] private List<ResultConfig> resultConfig = new List<ResultConfig>();
         [SerializeField] private RhythmHandler rhythmHandler;
@@ -64,21 +66,20 @@ namespace rhythm
             return color;
         }
 
+        public void SetHotKey(String key)
+        {
+            hotkeyLabel.text = key;
+        }
+
         public void OnPointerClick(PointerEventData eventData)
         {
             OnClick();
         }
 
+
         private void OnClick()
         {
-            if (rhythmHandler.IsPlaying())
-            {
-                rhythmHandler.Hit();
-            }
-            else
-            {
-                rhythmHandler.RequestPlayEvent();
-            }
+            rhythmHandler.Click();
         }
 
         private void HandleNotes()

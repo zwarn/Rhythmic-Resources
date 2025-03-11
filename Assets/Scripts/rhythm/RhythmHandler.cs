@@ -17,6 +17,7 @@ namespace rhythm
         [SerializeField] private int goodTolerance = 330;
         [SerializeField] private int perfectTolerance = 100;
         [SerializeField] private RhythmSO currentRhythmSO;
+        [SerializeField] private RhythmUI ui;
 
         private int _time;
         private bool _isPlaying = false;
@@ -111,6 +112,11 @@ namespace rhythm
             }
         }
 
+        public void SetHotKey(String hotkey)
+        {
+            ui.SetHotKey(hotkey);
+        }
+
         public void ChangeCurrentRhythm(RhythmSO rhythm)
         {
             Stop();
@@ -119,7 +125,6 @@ namespace rhythm
 
         private void AnnounceMiss()
         {
-            // Stop();
             _recentBeat = new RhythmResult(_time, _nextNote - _time, TimingResult.Miss);
 
             FindNextNote();
@@ -199,6 +204,19 @@ namespace rhythm
         {
             return _recentBeat;
         }
+
+        public void Click()
+        {
+            if (IsPlaying())
+            {
+                Hit();
+            }
+            else
+            {
+                RequestPlayEvent();
+            }
+        }
+
         public void RequestPlayEvent()
         {
             OnRequestPlay?.Invoke();
@@ -208,6 +226,5 @@ namespace rhythm
         {
             OnBarCompleted?.Invoke(timingResult);
         }
-
     }
 }

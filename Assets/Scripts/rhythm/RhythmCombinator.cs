@@ -15,6 +15,7 @@ namespace rhythm
 
         [SerializeField] private RhythmHandler handlerPrefab;
         [SerializeField] private Transform handlerParent;
+        [SerializeField] private List<KeyCode> hotkeys;
 
         private RecipeSO _recipe;
 
@@ -38,25 +39,12 @@ namespace rhythm
 
         private void Update()
         {
-            //TODO: move key based input to a more sensible place
-            if (Input.GetKeyDown(KeyCode.A) && NumberOfTracks() >= 1)
+            for (int i = 0; i < NumberOfTracks(); i++)
             {
-                _handlers[0].Hit();
-            }
-
-            if (Input.GetKeyDown(KeyCode.S) && NumberOfTracks() >= 2)
-            {
-                _handlers[1].Hit();
-            }
-
-            if (Input.GetKeyDown(KeyCode.D) && NumberOfTracks() >= 3)
-            {
-                _handlers[2].Hit();
-            }
-
-            if (Input.GetKeyDown(KeyCode.F) && NumberOfTracks() >= 4)
-            {
-                _handlers[3].Hit();
+                if (Input.GetKeyDown(hotkeys[i]))
+                {
+                    _handlers[i].Click();
+                }
             }
         }
 
@@ -83,6 +71,7 @@ namespace rhythm
                     var handler = _container.InstantiatePrefab(handlerPrefab, handlerParent)
                         .GetComponent<RhythmHandler>();
                     _handlers.Add(handler);
+                    handler.SetHotKey(hotkeys[i].ToString());
                 }
 
                 _handlers[i].ChangeCurrentRhythm(_recipe.rhythms[i]);
