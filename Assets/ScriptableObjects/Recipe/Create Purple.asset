@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22750b3647bf49fb98400b15b02ea759, type: 3}
   m_Name: Create Purple
   m_EditorClassIdentifier: 
-  recipeType: 1
+  recipeType: 2
   icon: {fileID: -8771699237674309934, guid: ece4cfd3a7c052f4eaa08a6233dc411f, type: 3}
   rhythms:
   - {fileID: 11400000, guid: 892b3ae2f3c04f648bcf336847f1aa36, type: 2}
