@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace rhythm
@@ -11,6 +12,9 @@ namespace rhythm
     {
         [SerializeField] private GameObject notePrefab;
         [SerializeField] private Transform noteParent;
+        [SerializeField] private Transform lineParent;
+        [SerializeField] private GameObject smallLinePrefab;
+        [SerializeField] private GameObject bigLinePrefab;
         [SerializeField] private Image feedbackMarker;
         [SerializeField] private Transform shadowParent;
         [SerializeField] private TMP_Text hotkeyLabel;
@@ -19,6 +23,8 @@ namespace rhythm
         [SerializeField] private RhythmHandler rhythmHandler;
 
         private List<GameObject> _noteObjects = new List<GameObject>();
+        private List<GameObject> _smallLines = new List<GameObject>();
+        private List<GameObject> _bigLines = new List<GameObject>();
         private GameObject _shadow;
 
         public void Start()
@@ -29,7 +35,9 @@ namespace rhythm
 
         public void Update()
         {
-            HandleNotes();
+            HandleBarObject(rhythmHandler.GetRelativeNotes(), _noteObjects, notePrefab, noteParent);
+            HandleBarObject(rhythmHandler.GetRelativeSmallLines(), _smallLines, smallLinePrefab, lineParent);
+            HandleBarObject(rhythmHandler.GetRelativeBigLines(), _bigLines, bigLinePrefab, lineParent);
             HandleRecent();
             HandleShadow();
         }
@@ -82,25 +90,25 @@ namespace rhythm
             rhythmHandler.Click();
         }
 
-        private void HandleNotes()
+        private void HandleBarObject(int[] positionsToDisplay, List<GameObject> gameObjectPool, GameObject prefab,
+            Transform parent)
         {
-            var notesToDisplay = rhythmHandler.GetRelativeNotes();
-            while (_noteObjects.Count < notesToDisplay.Length)
+            while (gameObjectPool.Count < positionsToDisplay.Length)
             {
-                _noteObjects.Add(Instantiate(notePrefab, noteParent));
+                gameObjectPool.Add(Instantiate(prefab, parent));
             }
 
-            for (var i = 0; i < _noteObjects.Count; i++)
+            for (var i = 0; i < gameObjectPool.Count; i++)
             {
-                GameObject noteObject = _noteObjects[i];
-                if (i < notesToDisplay.Length)
+                GameObject barObject = gameObjectPool[i];
+                if (i < positionsToDisplay.Length)
                 {
-                    noteObject.SetActive(true);
-                    MoveNoteToPosition(noteObject.GetComponent<RectTransform>(), notesToDisplay[i]);
+                    barObject.SetActive(true);
+                    MoveNoteToPosition(barObject.GetComponent<RectTransform>(), positionsToDisplay[i]);
                 }
                 else
                 {
-                    noteObject.SetActive(false);
+                    barObject.SetActive(false);
                 }
             }
         }

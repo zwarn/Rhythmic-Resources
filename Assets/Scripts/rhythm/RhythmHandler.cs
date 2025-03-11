@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using Zenject;
 
@@ -62,6 +63,37 @@ namespace rhythm
             _recentBeat = null;
         }
 
+
+        public int[] GetRelativeSmallLines()
+        {
+            return GetRelativePositionOfPeriodicLines(10000);
+        }
+
+        public int[] GetRelativeBigLines()
+        {
+            return GetRelativePositionOfPeriodicLines(currentRhythmSO.barDuration);
+        }
+
+        private int[] GetRelativePositionOfPeriodicLines(int frequency)
+        {
+            int barDuration = currentRhythmSO.barDuration;
+            int absoluteFrom = _time;
+            int absoluteTo = _time + 2 * barDuration;
+
+            List<int> lines = new List<int>();
+            int timebase = (absoluteFrom / barDuration) * barDuration;
+
+            for (int t = 0; t <= absoluteTo - absoluteFrom; t += frequency)
+            {
+                var timing = timebase + t - _time;
+                if (timing > 0 && timing <= barDuration)
+                {
+                    lines.Add(timebase + t - _time);
+                }
+            }
+
+            return lines.ToArray();
+        }
 
         public int[] GetRelativeNotes()
         {
