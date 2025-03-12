@@ -20,7 +20,7 @@ namespace rhythm
         private RecipeSO _recipe;
 
         private int _receivedBars = 0;
-        private int _exceptedBars = 0;
+        private int _expectedBars = 0;
 
         private readonly List<RhythmHandler> _handlers = new();
         private Dictionary<TimingResult, int> _timingResult = new();
@@ -34,7 +34,10 @@ namespace rhythm
             Reset();
 
             var bars = _recipe.rhythms.Select(rhythm => rhythm.barDuration / 10000).ToList();
-            _exceptedBars = LeastCommonMultipleHelper.FindSmallestCommonMultiple(bars);
+            var multiple = LeastCommonMultipleHelper.FindSmallestCommonMultiple(bars);
+            _expectedBars = bars.Select(numberOfBars => multiple / numberOfBars).Sum();
+            
+            Debug.Log(_expectedBars);
         }
 
         private void Update()
@@ -102,7 +105,7 @@ namespace rhythm
         {
             AggregateTimingResults(result);
 
-            if (_receivedBars >= _exceptedBars)
+            if (_receivedBars >= _expectedBars)
             {
                 BarCompletedEvent(_timingResult);
                 Reset();
