@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Unlock the color place
   price:
     resourceAmounts:
-    - resource: {fileID: 11400000, guid: 4561f49933a7a2046a3ef1ac3f1dcbb9, type: 2}
-      amount: 10
     - resource: {fileID: 11400000, guid: a87f5017698cd8e4fbb0093791f588f3, type: 2}
       amount: 5
+    - resource: {fileID: 11400000, guid: 4561f49933a7a2046a3ef1ac3f1dcbb9, type: 2}
+      amount: 10
   effects:
   - {fileID: 11400000, guid: 6de8cf2a8bcc53b49b4edcc7af58ee47, type: 2}
   - {fileID: 11400000, guid: d3553badf8a3f7b4bb008d7521dd5b5e, type: 2}

@@ -18,10 +18,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 892b3ae2f3c04f648bcf336847f1aa36, type: 2}
   - {fileID: 11400000, guid: 4fda34e5799502a41909ae4c0795c6e3, type: 2}
   input:
-    resourceAmounts: []
-  output:
     resourceAmounts:
     - resource: {fileID: 11400000, guid: c90311d2214f7ee4a83f427c74c9a6f5, type: 2}
-      amount: 3
+      amount: 1
     - resource: {fileID: 11400000, guid: 7a96d93f8854a1544914ec89a2240816, type: 2}
-      amount: 3
+      amount: 1
+  output:
+    resourceAmounts:
+    - resource: {fileID: 11400000, guid: 06033bc8f43e85d4b948f1d4017c880d, type: 2}
+      amount: 1
