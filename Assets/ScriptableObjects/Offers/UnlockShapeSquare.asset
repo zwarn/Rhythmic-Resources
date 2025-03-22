@@ -9,16 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22750b3647bf49fb98400b15b02ea759, type: 3}
-  m_Name: Create Square
+  m_Script: {fileID: 11500000, guid: c3f9f9eac8aa4d4aa02e9b5826232ffc, type: 3}
+  m_Name: UnlockShapeSquare
   m_EditorClassIdentifier: 
-  recipeType: 0
   icon: {fileID: 4617675547645311348, guid: f7befbb8f1222374a90a6660cbeff86d, type: 3}
-  rhythms:
-  - {fileID: 11400000, guid: c99f0930579bfa547b58f8e1b4ca3bce, type: 2}
-  input:
-    resourceAmounts: []
-  output:
+  description: Unlock Shape Square
+  price:
     resourceAmounts:
-    - resource: {fileID: 11400000, guid: a87f5017698cd8e4fbb0093791f588f3, type: 2}
-      amount: 1
+    - resource: {fileID: 11400000, guid: 4561f49933a7a2046a3ef1ac3f1dcbb9, type: 2}
+      amount: 4
+  effects:
+  - {fileID: 11400000, guid: 10ce15a470963e443a043e4a4c62f929, type: 2}

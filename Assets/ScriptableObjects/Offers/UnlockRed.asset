@@ -9,16 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22750b3647bf49fb98400b15b02ea759, type: 3}
-  m_Name: Create Red
+  m_Script: {fileID: 11500000, guid: c3f9f9eac8aa4d4aa02e9b5826232ffc, type: 3}
+  m_Name: UnlockRed
   m_EditorClassIdentifier: 
-  recipeType: 1
   icon: {fileID: -8214830322228201795, guid: 3ad63a426bc700e4ebbefb36688336a7, type: 3}
-  rhythms:
-  - {fileID: 11400000, guid: 0738046ff5563654b8cd7927a571bb4a, type: 2}
-  input:
-    resourceAmounts: []
-  output:
+  description: Unlock Color Red
+  price:
     resourceAmounts:
-    - resource: {fileID: 11400000, guid: 7a96d93f8854a1544914ec89a2240816, type: 2}
-      amount: 1
+    - resource: {fileID: 11400000, guid: c90311d2214f7ee4a83f427c74c9a6f5, type: 2}
+      amount: 4
+  effects:
+  - {fileID: 11400000, guid: 1daa60468d24b2b48aa39807e61c8324, type: 2}
+  - {fileID: 11400000, guid: b75b324b87175fe4f83856534a755621, type: 2}

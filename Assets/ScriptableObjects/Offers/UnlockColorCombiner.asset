@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f9f9eac8aa4d4aa02e9b5826232ffc, type: 3}
+  m_Name: UnlockColorCombiner
+  m_EditorClassIdentifier: 
+  icon: {fileID: -4136582127018768315, guid: 0a2fd6128a44a6c439990ac41780dbc5, type: 3}
+  description: Unlock the Color Combiner and purple
+  price:
+    resourceAmounts:
+    - resource: {fileID: 11400000, guid: 7a96d93f8854a1544914ec89a2240816, type: 2}
+      amount: 4
+  effects:
+  - {fileID: 11400000, guid: 1fcd7d32b152ae84fb1a12a7c8a623ee, type: 2}
+  - {fileID: 11400000, guid: a90723e02c8de634b9ba52b0d35e1111, type: 2}

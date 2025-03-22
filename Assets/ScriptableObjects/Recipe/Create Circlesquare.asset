@@ -10,15 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22750b3647bf49fb98400b15b02ea759, type: 3}
-  m_Name: Create Square
+  m_Name: Create Circlesquare
   m_EditorClassIdentifier: 
-  recipeType: 0
-  icon: {fileID: 4617675547645311348, guid: f7befbb8f1222374a90a6660cbeff86d, type: 3}
+  recipeType: 3
+  icon: {fileID: -6978709938037143895, guid: 73a21b836bdfdfd4388065b9e7cca35d, type: 3}
   rhythms:
+  - {fileID: 11400000, guid: 8c2ca1f9f24ba734c9366c083e44eedd, type: 2}
   - {fileID: 11400000, guid: c99f0930579bfa547b58f8e1b4ca3bce, type: 2}
   input:
-    resourceAmounts: []
+    resourceAmounts:
+    - resource: {fileID: 11400000, guid: 4561f49933a7a2046a3ef1ac3f1dcbb9, type: 2}
+      amount: 1
+    - resource: {fileID: 11400000, guid: a87f5017698cd8e4fbb0093791f588f3, type: 2}
+      amount: 1
   output:
     resourceAmounts:
-    - resource: {fileID: 11400000, guid: a87f5017698cd8e4fbb0093791f588f3, type: 2}
+    - resource: {fileID: 11400000, guid: 80383498717260f4a91c44305e3f8a3f, type: 2}
       amount: 1

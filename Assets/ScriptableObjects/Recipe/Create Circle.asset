@@ -15,7 +15,7 @@ MonoBehaviour:
   recipeType: 0
   icon: {fileID: -2883110788557862415, guid: a445001f1faac7d4ba0ee75afcdbd50b, type: 3}
   rhythms:
-  - {fileID: 11400000, guid: 4fda34e5799502a41909ae4c0795c6e3, type: 2}
+  - {fileID: 11400000, guid: 8c2ca1f9f24ba734c9366c083e44eedd, type: 2}
   input:
     resourceAmounts: []
   output:

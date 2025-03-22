@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f9f9eac8aa4d4aa02e9b5826232ffc, type: 3}
+  m_Name: UnlockPlaceCombineColorAndShape
+  m_EditorClassIdentifier: 
+  icon: {fileID: -4692258898042692901, guid: c3a7501011503eb478f479d8d76c2391, type: 3}
+  description: 
+  price:
+    resourceAmounts:
+    - resource: {fileID: 11400000, guid: 7a96d93f8854a1544914ec89a2240816, type: 2}
+      amount: 4
+    - resource: {fileID: 11400000, guid: 80383498717260f4a91c44305e3f8a3f, type: 2}
+      amount: 4
+  effects:
+  - {fileID: 11400000, guid: 1accd902347bbf44d8f46a52337c7e07, type: 2}
+  - {fileID: 11400000, guid: 0b70e6b4fd7943a4395276a76b828adc, type: 2}

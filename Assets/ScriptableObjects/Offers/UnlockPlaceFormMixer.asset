@@ -10,13 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3f9f9eac8aa4d4aa02e9b5826232ffc, type: 3}
-  m_Name: UnlockColorPlace
+  m_Name: UnlockPlaceFormMixer
   m_EditorClassIdentifier: 
-  icon: {fileID: -3489807806607000399, guid: 92a714300177f0d45987f96376ac409d, type: 3}
-  description: Unlock the color place
+  icon: {fileID: 0}
+  description: 
   price:
     resourceAmounts: []
-  effects:
-  - {fileID: 11400000, guid: 6de8cf2a8bcc53b49b4edcc7af58ee47, type: 2}
-  - {fileID: 11400000, guid: d3553badf8a3f7b4bb008d7521dd5b5e, type: 2}
-  - {fileID: 11400000, guid: 5f205d2834c53504b88fbc69e772234c, type: 2}
+  effects: []

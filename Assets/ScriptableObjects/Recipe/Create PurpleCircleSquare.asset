@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22750b3647bf49fb98400b15b02ea759, type: 3}
+  m_Name: Create PurpleCircleSquare
+  m_EditorClassIdentifier: 
+  recipeType: 4
+  icon: {fileID: -1846566649827716846, guid: 49f018bde5b1f184bbbacc18b2708259, type: 3}
+  rhythms:
+  - {fileID: 11400000, guid: 19d61c77c5457d442828660a3dfb76ab, type: 2}
+  - {fileID: 11400000, guid: e5b2765329045b24192121064cb94662, type: 2}
+  input:
+    resourceAmounts:
+    - resource: {fileID: 11400000, guid: 06033bc8f43e85d4b948f1d4017c880d, type: 2}
+      amount: 1
+    - resource: {fileID: 11400000, guid: 80383498717260f4a91c44305e3f8a3f, type: 2}
+      amount: 1
+  output:
+    resourceAmounts:
+    - resource: {fileID: 11400000, guid: 8327a089c8f18bc4290c9de47c4aae43, type: 2}
+      amount: 1

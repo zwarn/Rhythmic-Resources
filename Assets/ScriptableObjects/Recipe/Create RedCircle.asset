@@ -10,15 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22750b3647bf49fb98400b15b02ea759, type: 3}
-  m_Name: Create Red
+  m_Name: Create RedCircle
   m_EditorClassIdentifier: 
-  recipeType: 1
-  icon: {fileID: -8214830322228201795, guid: 3ad63a426bc700e4ebbefb36688336a7, type: 3}
+  recipeType: 4
+  icon: {fileID: 3422253881651426754, guid: 46a3f29967a9b354b979fb0c1997b183, type: 3}
   rhythms:
   - {fileID: 11400000, guid: 0738046ff5563654b8cd7927a571bb4a, type: 2}
+  - {fileID: 11400000, guid: 8c2ca1f9f24ba734c9366c083e44eedd, type: 2}
   input:
-    resourceAmounts: []
-  output:
     resourceAmounts:
     - resource: {fileID: 11400000, guid: 7a96d93f8854a1544914ec89a2240816, type: 2}
+      amount: 1
+    - resource: {fileID: 11400000, guid: 4561f49933a7a2046a3ef1ac3f1dcbb9, type: 2}
+      amount: 1
+  output:
+    resourceAmounts:
+    - resource: {fileID: 11400000, guid: 8327a089c8f18bc4290c9de47c4aae43, type: 2}
       amount: 1
