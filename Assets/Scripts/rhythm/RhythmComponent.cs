@@ -22,6 +22,7 @@ namespace rhythm
             _recipeController.OnRecipeChanged += UpdateAvailableRecipes;
             rhythmCombinator.OnBarCompleted += HandleProduction;
             rhythmCombinator.OnRequestPlay += Play;
+            UpdateAvailableRecipes();
         }
 
         private void OnDisable()

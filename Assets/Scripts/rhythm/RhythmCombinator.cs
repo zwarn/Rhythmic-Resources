@@ -36,8 +36,6 @@ namespace rhythm
             var bars = _recipe.rhythms.Select(rhythm => rhythm.barDuration / 10000).ToList();
             var multiple = LeastCommonMultipleHelper.FindSmallestCommonMultiple(bars);
             _expectedBars = bars.Select(numberOfBars => multiple / numberOfBars).Sum();
-            
-            Debug.Log(_expectedBars);
         }
 
         private void Update()

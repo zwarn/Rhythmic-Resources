@@ -48,7 +48,6 @@ namespace rhythm
                     _barCount = currentBar;
                     BarCompletedEvent(_resultCounter);
                     ResetResultCounter();
-                    Debug.Log($"Finished {_barCount}");
                 }
             }
         }
