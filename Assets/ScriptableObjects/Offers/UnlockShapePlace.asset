@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f9f9eac8aa4d4aa02e9b5826232ffc, type: 3}
   m_Name: UnlockShapePlace
   m_EditorClassIdentifier: 
-  icon: {fileID: -1621138534137953119, guid: d6b33e9e90f7f654f8291f4c9caf2b4e, type: 3}
+  icon: {fileID: 382836524067257491, guid: cfdb4cc38d1c453448915e695f90c9e3, type: 3}
   description: Unlock the shapes place
   price:
-    resourceAmounts: []
+    resourceAmounts:
+    - resource: {fileID: 11400000, guid: 06033bc8f43e85d4b948f1d4017c880d, type: 2}
+      amount: 1
   effects:
   - {fileID: 11400000, guid: 538357a043c5fb54392ae0f9a62929f0, type: 2}
   - {fileID: 11400000, guid: 1ab0eac57d1d6914a808242535501890, type: 2}
-  - {fileID: 11400000, guid: 10ce15a470963e443a043e4a4c62f929, type: 2}
-  - {fileID: 11400000, guid: 339968930702dc3458f650a47b4e74a3, type: 2}
+  - {fileID: 11400000, guid: 92517ebd00d3a9843b950515dc09bd65, type: 2}
+  - {fileID: 11400000, guid: 163ee93376146b94396beba96b16a8ec, type: 2}

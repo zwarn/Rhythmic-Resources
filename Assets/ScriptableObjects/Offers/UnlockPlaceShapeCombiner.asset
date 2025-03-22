@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3f9f9eac8aa4d4aa02e9b5826232ffc, type: 3}
-  m_Name: UnlockPlaceCombineColorAndShape
+  m_Name: UnlockPlaceShapeCombiner
   m_EditorClassIdentifier: 
-  icon: {fileID: -4692258898042692901, guid: c3a7501011503eb478f479d8d76c2391, type: 3}
-  description: 
+  icon: {fileID: -6978709938037143895, guid: 73a21b836bdfdfd4388065b9e7cca35d, type: 3}
+  description: Unlock Shape Combiner
   price:
     resourceAmounts:
-    - resource: {fileID: 11400000, guid: 7a96d93f8854a1544914ec89a2240816, type: 2}
-      amount: 1
     - resource: {fileID: 11400000, guid: 4561f49933a7a2046a3ef1ac3f1dcbb9, type: 2}
       amount: 1
+    - resource: {fileID: 11400000, guid: a87f5017698cd8e4fbb0093791f588f3, type: 2}
+      amount: 1
   effects:
-  - {fileID: 11400000, guid: 1accd902347bbf44d8f46a52337c7e07, type: 2}
-  - {fileID: 11400000, guid: 0b70e6b4fd7943a4395276a76b828adc, type: 2}
-  - {fileID: 11400000, guid: 51b717bb4a2ddae498b0c3dd3e468b7a, type: 2}
+  - {fileID: 11400000, guid: c22cf0a8b09820b4bb7f25b2aa54d068, type: 2}
+  - {fileID: 11400000, guid: d738433d23d6b4d4fab4359e0a5100cc, type: 2}
+  - {fileID: 11400000, guid: 8c9d8b4ecf922114c90aae03b2e29806, type: 2}

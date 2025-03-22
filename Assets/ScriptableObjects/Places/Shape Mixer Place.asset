@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Shape Mixer Place
   m_EditorClassIdentifier: 
   name: Color Mixer
-  icon: {fileID: -4136582127018768315, guid: 0a2fd6128a44a6c439990ac41780dbc5, type: 3}
-  screenPrefab: {fileID: 3670373611724150248, guid: 1f4eb11d8bab4cd41a085a4e46b7a755, type: 3}
+  icon: {fileID: -6978709938037143895, guid: 73a21b836bdfdfd4388065b9e7cca35d, type: 3}
+  screenPrefab: {fileID: 3670373611724150248, guid: 0b2ae5087ce251c4998c6077e101bfa6, type: 3}

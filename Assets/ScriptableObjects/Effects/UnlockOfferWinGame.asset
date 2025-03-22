@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3f9f9eac8aa4d4aa02e9b5826232ffc, type: 3}
-  m_Name: UnlockPlaceFormMixer
+  m_Script: {fileID: 11500000, guid: fc4fca4d9ad24a6e8f8ea03b167c3661, type: 3}
+  m_Name: UnlockOfferWinGame
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  description: 
-  price:
-    resourceAmounts: []
-  effects: []
+  offers:
+  - {fileID: 11400000, guid: 46cb8fc3261b38640a58b249a0b74817, type: 2}

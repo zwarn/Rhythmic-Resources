@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Shape Place
   m_EditorClassIdentifier: 
   name: Shape Place
-  icon: {fileID: -1621138534137953119, guid: d6b33e9e90f7f654f8291f4c9caf2b4e, type: 3}
+  icon: {fileID: 382836524067257491, guid: cfdb4cc38d1c453448915e695f90c9e3, type: 3}
   screenPrefab: {fileID: 5529569291252263454, guid: 078ce3ae8849cb241b38cfac37181e5b, type: 3}

@@ -17,7 +17,7 @@ MonoBehaviour:
   price:
     resourceAmounts:
     - resource: {fileID: 11400000, guid: c90311d2214f7ee4a83f427c74c9a6f5, type: 2}
-      amount: 4
+      amount: 1
   effects:
   - {fileID: 11400000, guid: 1daa60468d24b2b48aa39807e61c8324, type: 2}
   - {fileID: 11400000, guid: b75b324b87175fe4f83856534a755621, type: 2}
