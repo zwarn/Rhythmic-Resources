@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f9f9eac8aa4d4aa02e9b5826232ffc, type: 3}
   m_Name: UnlockPurpleCircleSquare
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  description: 
+  icon: {fileID: -1846566649827716846, guid: 49f018bde5b1f184bbbacc18b2708259, type: 3}
+  description: Unlock purple circlesquare
   price:
     resourceAmounts:
     - resource: {fileID: 11400000, guid: 06033bc8f43e85d4b948f1d4017c880d, type: 2}
