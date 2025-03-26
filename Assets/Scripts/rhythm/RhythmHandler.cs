@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
-using Zenject;
 
 namespace rhythm
 {
@@ -19,6 +17,7 @@ namespace rhythm
         [SerializeField] private int perfectTolerance = 100;
         [SerializeField] private RhythmSO currentRhythmSO;
         [SerializeField] private RhythmUI ui;
+        [SerializeField] private RhythmPlayer rhythmPlayer;
 
         private int _time;
         private bool _isPlaying = false;
@@ -28,7 +27,6 @@ namespace rhythm
         private RhythmResult _recentBeat = null;
         private Dictionary<TimingResult, int> _resultCounter = new Dictionary<TimingResult, int>();
 
-        [Inject] private AudioController _audioController;
 
         public void Update()
         {
@@ -212,7 +210,7 @@ namespace rhythm
             _isPlaying = false;
             _nextNote = 0;
             _barCount = 0;
-            _audioController.Stop();
+            rhythmPlayer.Stop();
         }
 
         public void Play()
@@ -223,7 +221,7 @@ namespace rhythm
             FindNextNote();
             _recentBeat = null;
             ResetResultCounter();
-            _audioController.Play(currentRhythmSO);
+            rhythmPlayer.Play(currentRhythmSO);
         }
 
         public bool IsPlaying()

@@ -335,6 +335,7 @@ RectTransform:
   - {fileID: 6504298056977432431}
   - {fileID: 5182698289897202899}
   - {fileID: 84668456646796252}
+  - {fileID: 226537450473604735}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -399,6 +400,7 @@ MonoBehaviour:
   perfectTolerance: 100
   currentRhythmSO: {fileID: 0}
   ui: {fileID: 2797042949457915709}
+  rhythmPlayer: {fileID: 1896287425754314488}
 --- !u!114 &1255046732557313463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,6 +592,79 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1001 &2712231613828878976
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3567691415228576434}
+    m_Modifications:
+    - target: {fileID: 2776217193218020607, guid: 074eb9c3ad696ec45b5c4fe4ab351817, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776217193218020607, guid: 074eb9c3ad696ec45b5c4fe4ab351817, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776217193218020607, guid: 074eb9c3ad696ec45b5c4fe4ab351817, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776217193218020607, guid: 074eb9c3ad696ec45b5c4fe4ab351817, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776217193218020607, guid: 074eb9c3ad696ec45b5c4fe4ab351817, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776217193218020607, guid: 074eb9c3ad696ec45b5c4fe4ab351817, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776217193218020607, guid: 074eb9c3ad696ec45b5c4fe4ab351817, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776217193218020607, guid: 074eb9c3ad696ec45b5c4fe4ab351817, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776217193218020607, guid: 074eb9c3ad696ec45b5c4fe4ab351817, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776217193218020607, guid: 074eb9c3ad696ec45b5c4fe4ab351817, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442103205253634108, guid: 074eb9c3ad696ec45b5c4fe4ab351817, type: 3}
+      propertyPath: m_Name
+      value: RhythmPlayer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 074eb9c3ad696ec45b5c4fe4ab351817, type: 3}
+--- !u!4 &226537450473604735 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2776217193218020607, guid: 074eb9c3ad696ec45b5c4fe4ab351817, type: 3}
+  m_PrefabInstance: {fileID: 2712231613828878976}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1896287425754314488 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4608096205421601912, guid: 074eb9c3ad696ec45b5c4fe4ab351817, type: 3}
+  m_PrefabInstance: {fileID: 2712231613828878976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec1f9a516e54def8b6919c70a828c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3841194743190814705
 PrefabInstance:
   m_ObjectHideFlags: 0

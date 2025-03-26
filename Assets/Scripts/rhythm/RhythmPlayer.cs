@@ -2,7 +2,7 @@
 
 namespace rhythm
 {
-    public class AudioController : MonoBehaviour
+    public class RhythmPlayer : MonoBehaviour
     {
         [SerializeField] private AudioSource audioSource;
 
