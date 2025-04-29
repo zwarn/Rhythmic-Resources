@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1621138534137953119, guid: d6b33e9e90f7f654f8291f4c9caf2b4e, type: 3}
+  m_Sprite: {fileID: 382836524067257491, guid: cfdb4cc38d1c453448915e695f90c9e3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -254,6 +254,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3252462621174162353, guid: be978ee5bcf6aa241a4b43fbb36f7ddb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868922429577730523, guid: be978ee5bcf6aa241a4b43fbb36f7ddb, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
